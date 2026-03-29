@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal | ProjectAlpha</title>
+    <link rel="stylesheet" href="student.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">Project<span>Alpha</span></div>
+            <nav>
+                <button class="nav-btn active" onclick="showTab('profile')">My Profile</button>
+                <button class="nav-btn" onclick="showTab('jobs')">Available Jobs</button>
+                <button class="nav-btn" onclick="showTab('applied')">My Applications</button>
+                
+            </nav>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </aside>
+
+        <main class="content">
+            <section id="profile" class="tab-content active">
+                <div class="header">
+                    <h1>Welcome, <span id="student-name">Student</span></h1>
+                </div>
+                <div class="profile-card">
+                    <div class="info-grid">
+                        <div class="info-item"><label>Department</label><p id="p-dept">-</p></div>
+                        <div class="info-item"><label>CGPA</label><p id="p-cgpa">-</p></div>
+                        <div class="info-item"><label>Email</label><p id="p-email">-</p></div>
+                        <div class="info-item"><label>Phone</label><p id="p-phone">-</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="jobs" class="tab-content">
+                <div class="header"><h1>Available Opportunities</h1></div>
+                <div id="jobs-list" class="grid-container">
+                    </div>
+            </section>
+
+            <section id="applied" class="tab-content">
+                <div class="header"><h1>My Applications</h1></div>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Date Applied</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="applied-list">
+                        </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="student.js"></script>
+</body>
+</html>

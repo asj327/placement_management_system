@@ -1,0 +1,80 @@
+/* Inherit base variables from login or redefine here */
+:root {
+    --primary: #3b82f6;
+    --bg: #f9fafb;
+}
+
+body {
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.signup-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 500px; /* Wider than login to fit 2-column rows */
+}
+
+/* Form Row for First/Last Name and CGPA/Phone */
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.input-group { margin-bottom: 1rem; text-align: left; }
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #374151;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+/* Toggle Buttons */
+.toggle-container {
+    display: flex;
+    margin-bottom: 2rem;
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.toggle-btn {
+    flex: 1;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    background: transparent;
+    font-weight: 600;
+}
+
+.toggle-btn.active { background: white; color: var(--primary); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+.btn-signup {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+}
