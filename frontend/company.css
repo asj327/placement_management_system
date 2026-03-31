@@ -1,0 +1,64 @@
+/* Styling for the form rows (two inputs side by side) */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; color: #4a5568; }
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: #4318ff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { background: #3311cc; }
+
+/* Status dropdown in the table */
+.status-select {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.resume-link {
+    color: #4318ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.job-status-active { color: #05cd99; font-weight: bold; }
+.job-status-expired { color: #ee5d50; font-weight: bold; }
+
+.btn-secondary {
+    background: #f4f7fe;
+    color: #ee5d50;
+    border: 1px solid #ee5d50;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background: #ee5d50;
+    color: white;
+}

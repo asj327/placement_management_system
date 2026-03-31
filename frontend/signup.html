@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | ProjectAlpha</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-card">
+            <h2>Create Account</h2>
+            
+            <div class="toggle-container">
+                <button class="toggle-btn active" onclick="switchRole('student')">Student</button>
+                <button class="toggle-btn" onclick="switchRole('company')">Company</button>
+            </div>
+
+            <form id="signup-form">
+                <div class="input-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="input-group">
+                    <label>Password *</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <div id="student-fields">
+                    <div class="row">
+                        <div class="input-group"><label>First Name</label><input type="text" id="first_name"></div>
+                        <div class="input-group"><label>Last Name</label><input type="text" id="last_name"></div>
+                    </div>
+                    <div class="input-group"><label>Department</label><input type="text" id="department" placeholder="e.g. CS"></div>
+                    <div class="row">
+                        <div class="input-group"><label>CGPA</label><input type="number" step="0.01" id="cgpa"></div>
+                        <div class="input-group"><label>Phone</label><input type="text" id="phone"></div>
+                    </div>
+                </div>
+
+                <div id="company-fields" style="display: none;">
+                    <div class="input-group"><label>Company Name</label><input type="text" id="company_name"></div>
+                    <div class="input-group"><label>Location</label><input type="text" id="location"></div>
+                    <div class="input-group"><label>Website URL</label><input type="url" id="website"></div>
+                    <div class="input-group"><label>Description</label><textarea id="description" rows="3"></textarea></div>
+                </div>
+
+                <button type="submit" class="btn-signup">Register Account</button>
+            </form>
+            <p id="status-msg"></p>
+        </div>
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>

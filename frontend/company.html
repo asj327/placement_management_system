@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Portal | ProjectAlpha</title>
+    <link rel="stylesheet" href="student.css"> <link rel="stylesheet" href="company.css"> 
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">Project<span>Alpha</span></div>
+            <nav>
+                <button class="nav-btn active" onclick="showTab('post-job')">Post New Job</button>
+                <button class="nav-btn" onclick="showTab('manage-jobs')">Manage Jobs</button> <!-- NEW -->
+                <button class="nav-btn" onclick="showTab('view-applicants')">View Applicants</button>
+            </nav>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </aside>
+
+        <main class="content">
+            <section id="post-job" class="tab-content active">
+                <div class="header"><h1>Create Job Opening</h1></div>
+                <div class="card">
+                    <form id="job-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Job Title</label>
+                                <input type="text" id="job_title" placeholder="e.g. Software Engineer" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Job Type</label>
+                                <select id="job_type">
+                                    <option value="Full-Time">Full-Time</option>
+                                    <option value="Part-Time">Part-Time</option>
+                                    <option value="Internship">Internship</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Location</label>
+                                <input type="text" id="location" placeholder="e.g. Remote or City" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Salary (Annual)</label>
+                                <input type="number" id="salary" placeholder="e.g. 50000">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Min CGPA Required</label>
+                                <input type="number" step="0.01" id="eligibility_cgpa" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Application Deadline</label>
+                                <input type="date" id="deadline" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Job Description</label>
+                            <textarea id="job_description" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Post Job Opportunity</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="manage-jobs" class="tab-content">
+            <div class="header"><h1>Our Posted Jobs</h1></div>
+            <div id="company-jobs-list" class="grid-container">
+        <!-- Jobs will be loaded here via JS -->
+            </div>
+            </section>
+
+            <section id="view-applicants" class="tab-content">
+                <div class="header"><h1>Student Applications</h1></div>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Applied Job</th>
+                            <th>CGPA</th>
+                            <th>Resume</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="applicant-list">
+                        </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="company.js"></script>
+</body>
+</html>

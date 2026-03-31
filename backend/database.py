@@ -1,26 +1,11 @@
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+import mysql.connector
 
-# SQLite database file
-DATABASE_URL = "sqlite:///./placement.db"
-
-# Create database engine
-engine = create_engine(
-    DATABASE_URL, connect_args={"check_same_thread": False}
-)
-
-# Session maker
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-# Base class for models
-Base = declarative_base()
-
-
-# Dependency for database session
 def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+    # Connect to MySQL
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",          # change if needed
+        password="password",  # change this
+        database="placement_management"
+    )
+    return conn
