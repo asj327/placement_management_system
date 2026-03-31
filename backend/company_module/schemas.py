@@ -1,18 +1,33 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
+from typing import Optional
 
-class CompanyBase(BaseModel):
-    name: str
+
+# ─── AUTH ───────────────────────────────────────────────
+class CompanyRegisterModel(BaseModel):
+    company_name: str
     email: str
-    location: str
-    description: str
+    password: str
+    industry: Optional[str] = None
+    website: Optional[str] = None
+    description: Optional[str] = None
 
 
-class CompanyCreate(CompanyBase):
-    pass
+class CompanyLoginModel(BaseModel):
+    email: str
+    password: str
 
 
-class CompanyResponse(CompanyBase):
-    id: int
+# ─── JOB POSTING ────────────────────────────────────────
+class PostJobModel(BaseModel):
+    job_title: str
+    job_type: str = "Full-Time"          # Full-Time | Part-Time | Internship
+    location: Optional[str] = None
+    salary: Optional[float] = None
+    eligibility_cgpa: Optional[float] = None
+    deadline: str                         # YYYY-MM-DD
+    job_description: Optional[str] = None
 
-    class Config:
-        from_attributes = True
+
+# ─── APPLICATION STATUS ──────────────────────────────────
+class UpdateStatusModel(BaseModel):
+    status: str                           # Pending | Selected | Rejected
